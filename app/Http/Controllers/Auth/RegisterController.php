@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use DB;
 
 use App\Models\Users\Subjects;
+use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -57,7 +58,7 @@ class RegisterController extends Controller
         return view('auth.register.register', compact('subjects'));
     }
 
-    public function registerPost(Request $request)
+    public function registerPost(RegisterRequest $request)
     {
         DB::beginTransaction();
         try{
@@ -65,7 +66,13 @@ class RegisterController extends Controller
             $old_month = $request->old_month;
             $old_day = $request->old_day;
             $data = $old_year . '-' . $old_month . '-' . $old_day;
+            if(checkdate($data)){
             $birth_day = date('Y-m-d', strtotime($data));
+            }
+            else{return back()->withErrors([
+            'old_day' => '正しい日付を入力してください'
+            ])->withInput();
+            }
             $subjects = $request->subject;
 
             $user_get = User::create([
