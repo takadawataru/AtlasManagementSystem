@@ -66,11 +66,11 @@ class RegisterController extends Controller
             $old_month = $request->old_month;
             $old_day = $request->old_day;
             $data = $old_year . '-' . $old_month . '-' . $old_day;
-            if(checkdate($data)){
+            if(checkdate($old_month,$old_day,$old_year)){
             $birth_day = date('Y-m-d', strtotime($data));
             }
             else{return back()->withErrors([
-            'old_day' => '正しい日付を入力してください'
+            'old_year' => '正しい日付を入力してください'
             ])->withInput();
             }
             $subjects = $request->subject;
