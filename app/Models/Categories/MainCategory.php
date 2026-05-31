@@ -13,6 +13,7 @@ class MainCategory extends Model
     ];
 
     public function subCategories(){
+        return $this->hasMany('App\Models\Categories\SubCategories');
         // リレーションの定義
     }
 

@@ -45,8 +45,8 @@
                     <div class="d-flex mt-3" style="justify-content:space-between">
                         <div class="" style="width:140px">
                             @error('over_name_kana')
-                             <div class="alert alert-danger">{{ $message }}</div>
-                             @enderror
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <label class="d-block m-0" style="font-size:13px">セイ</label>
                             <div class="border-bottom border-primary" style="width:140px;">
                                 <input type="text" style="width:140px;" class="border-0 over_name_kana"
@@ -55,8 +55,8 @@
                         </div>
                         <div class="" style="width:140px">
                             @error('under_name_kana')
-                             <div class="alert alert-danger">{{ $message }}</div>
-                             @enderror
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <label class="d-block m-0" style="font-size:13px">メイ</label>
                             <div class="border-bottom border-primary" style="width:140px;">
                                 <input type="text" style="width:140px;" class="border-0 under_name_kana"
@@ -66,8 +66,8 @@
                     </div>
                     <div class="mt-3">
                             @error('mail_address')
-                             <div class="alert alert-danger">{{ $message }}</div>
-                             @enderror
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         <label class="m-0 d-block" style="font-size:13px">メールアドレス</label>
                         <div class="border-bottom border-primary">
                             <input type="mail" class="w-100 border-0 mail_address" name="mail_address">

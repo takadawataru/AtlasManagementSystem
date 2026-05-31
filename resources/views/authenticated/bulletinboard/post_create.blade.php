@@ -9,6 +9,11 @@
         @foreach($main_categories as $main_category)
         <optgroup label="{{ $main_category->main_category }}"></optgroup>
         <!-- サブカテゴリー表示 -->
+        @foreach($sub_categories as $sub_category)
+        @if($sub_category->main_category_id===$main_category->id)
+        <option value="{{$sub_category->id}}">{{$sub_category->sub_category}}</option>
+        @endif
+        @endforeach
         </optgroup>
         @endforeach
       </select>
@@ -36,12 +41,29 @@
   <div class="w-25 ml-auto mr-auto">
     <div class="category_area mt-5 p-5">
       <div class="">
-        <p class="m-0">メインカテゴリー</p>
-        <input type="text" class="w-100" name="main_category_name" form="mainCategoryRequest">
-        <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="mainCategoryRequest">
+          @error('main_category_name')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+          <p class="m-0">メインカテゴリー</p>
+          <input type="text" class="w-100" name="main_category_name" form="mainCategoryRequest">
+          <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="mainCategoryRequest">
       </div>
+      <div class="">
+          @error('sub_category_name')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
       <!-- サブカテゴリー追加 -->
+        <p class="m-0">サブカテゴリー</p>
+        <select name="main_category_id" form="subCategoryRequest">
+        @foreach($main_categories as $main_category)
+        <option value="{{$main_category->id}}">{{$main_category->main_category}}</option>
+        @endforeach
+        </select>
+        <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest">
+        <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
+      </div>
       <form action="{{ route('main.category.create') }}" method="post" id="mainCategoryRequest">{{ csrf_field() }}</form>
+      <form action="{{ route('sub.category.create') }}" method="post" id="subCategoryRequest">{{ csrf_field() }}</form>
     </div>
   </div>
   @endcan
