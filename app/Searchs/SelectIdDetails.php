@@ -29,7 +29,7 @@ class SelectIdDetails implements DisplayUsers{
       ->whereIn('role', $role);
     })
     ->whereHas('subjects', function($q) use ($subjects){
-      $q->whereIn('subjects.id', $subjects);
+      $q->whereIn('subjects.id', $subjects);//whereInは部分一致　whereは完全一致
     })
     ->orderBy('id', $updown)->get();
     return $users;
