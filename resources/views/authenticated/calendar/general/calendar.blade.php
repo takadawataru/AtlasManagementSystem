@@ -18,12 +18,17 @@
 
 <div class="modal">
   <div class="modal__bg js-modal-close" ></div>
-  <div class="modal-content">
-    <p>予約日</p>
-    <p>時間</p>
-    <p>上記の予約をキャンセルしてもよろしいでしょうか？</p>
-    <button　class="js-modal-close">閉じる</button>
-    <button>キャンセル</button>
-  </div>
+    <form action="/delete/calendar" method="POST">
+      @csrf
+    <div class="modal-content">
+      <p>予約日</p><p class= "modal-day"></p>
+      <input type="hidden" name="day" class="hidden_day">
+      <p>時間</p><p class="modal-part"></p>
+      <input type="hidden" name="part" class="hidden_part">
+      <p>上記の予約をキャンセルしてもよろしいでしょうか？</p>
+      <button　class="js-modal-close">閉じる</button>
+      <button>キャンセル</button>
+    </div>
+  </form>
 </div>
 @endsection

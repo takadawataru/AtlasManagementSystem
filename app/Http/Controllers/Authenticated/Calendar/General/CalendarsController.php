@@ -35,4 +35,22 @@ class CalendarsController extends Controller
         }
         return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
     }
+
+    public function delete(Request $request){
+        $day = $request->day;
+        $part = $request->part;
+        if($part=="リモ1部"){
+            $part=1;
+        }
+        elseif($part=="リモ2部"){
+            $part=2;
+        }
+        elseif($part=="リモ3部"){
+            $part=3;
+        };
+        $reserve_setting = ReserveSettings::where('setting_reserve',$day)->where('setting_part' ,$part)->first();
+        $reserve_setting->increment('limit_users');
+        $reserve_setting->users()->detach(Auth::id());
+        return redirect()->route('calendar.general.show',['user_id' => Auth::id()]);
+    }
 }
