@@ -42,7 +42,7 @@
     <div class="category_area mt-5 p-5">
       <div class="">
           @error('main_category_name')
-          <div class="alert alert-danger">{{ $message }}</div>
+          <div class="error_message">{{ $message }}</div>
           @enderror
           <p class="m-0">メインカテゴリー</p>
           <input type="text" class="w-100" name="main_category_name" form="mainCategoryRequest">
@@ -50,7 +50,7 @@
       </div>
       <div class="">
           @error('sub_category_name')
-          <div class="alert alert-danger">{{ $message }}</div>
+          <div class="error_message">{{ $message }}</div>
           @enderror
       <!-- サブカテゴリー追加 -->
         <p class="m-0">サブカテゴリー</p>

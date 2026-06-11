@@ -176,7 +176,7 @@ li {
 
 .detail_inner_head {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .edit-modal-open {
@@ -191,6 +191,7 @@ li {
 .edit-modal-btn {
   justify-content: space-between;
 }
+
 
 /* 掲示板 コメント */
 .comment_container {
@@ -218,8 +219,12 @@ li {
 
 /* 掲示板　カテゴリー */
 .category_area {
-  background: #FFF;
+  background-color: #03AAD2;
   border-radius: 10px;
+  margin-right: 70%;
+  width: auto;
+  height: 20px;
+  color: #FFF;
 }
 
 .category_box {
@@ -287,5 +292,47 @@ li {
 }
 
 .past-day {
-  background-color: #9E9E9E;
+  background-color: #D3D3D3;
+}
+
+.arrow {
+  border-top: #494949 1px solid;
+  border-left: #494949 1px solid;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  transform: rotate(-135deg);
+  position: absolute;
+  top: 25%;
+  margin-left: 20%;
+}
+
+.arrow.rotation {
+  transform: rotate(45deg);
+
+}
+
+.modal_reserve_day {
+  display: flex;
+}
+
+.calendar_reserve_detail {
+  background-color: #fff;
+}
+
+.calendar_reserve_title {
+  background-color: #03AAD2;
+  color: #FFF;
+}
+
+.calendar_reserve_users {
+  width: 100%;
+}
+
+.calendar_reserve_info:nth-child(2n) {
+  background-color: #FFF
+}
+
+.calendar_reserve_info:nth-child(2n+1) {
+  background-color: aqua;
 }

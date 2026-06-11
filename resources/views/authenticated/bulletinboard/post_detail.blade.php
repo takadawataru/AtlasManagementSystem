@@ -7,16 +7,21 @@
         <div class="detail_inner_head">
           <div>
             @error('post_title')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="error_message">{{ $message }}</div>
             @enderror
             @error('post_body')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="error_message">{{ $message }}</div>
             @enderror
+          </div>
+          <div class="category_area" style="font-size:10px; text-aline:left;">
+            @foreach($post->subCategories as $subcategory)
+            {{$subcategory->sub_category}}
+            @endforeach
           </div>
           @if(Auth::user()->id==$post->user_id)
           <div>
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('削除してよろしいでしょうか？')">削除</a>
+            <span class="edit-modal-open  btn btn-primary " post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
+            <a href="{{ route('post.delete', ['id' => $post->id]) }}" class="btn btn-danger" onclick="return confirm('削除してよろしいでしょうか？')">削除</a>
           </div>
           @endif
         </div>
@@ -52,7 +57,7 @@
     <div class="comment_container border m-5">
       <div class="comment_area p-3">
         @error('comment')
-        <div class="alert alert-danger">{{ $message }}</div>
+        <div class="error_message">{{ $message }}</div>
         @enderror
         <p class="m-0">コメントする</p>
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
