@@ -4,6 +4,11 @@ $(function () {
   });
 });
 $(function () {
+  $('.subject_edit_btn').click(function () {
+    $('.arrow_profile').toggleClass('rotation');
+  });
+});
+$(function () {
   $('.search_conditions').click(function () {
     $('.search_conditions_inner').slideToggle();
   });

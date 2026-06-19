@@ -30,8 +30,8 @@
         <input type="hidden" name="part" class="hidden_part">
       </div>
       <p>上記の予約をキャンセルしてもよろしいでしょうか？</p>
-      <button　class="js-modal-close">閉じる</button>
-      <button>キャンセル</button>
+      <button class="btn btn-primary js-modal-close">閉じる</button>
+      <button class="btn btn-danger">キャンセル</button>
     </div>
   </form>
 </div>

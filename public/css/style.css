@@ -270,6 +270,7 @@ li {
 .one_person {
   width: 250px;
   height: 250px;
+  border-radius: 10px;
 }
 
 .search_conditions span {
@@ -312,6 +313,60 @@ li {
 
 }
 
+.arrow_profile {
+  border-top: #0000FF 1px solid;
+  border-left: #0000FF 1px solid;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  transform: rotate(-135deg);
+  position: absolute;
+  top: 48%;
+  margin-left: 1%;
+}
+
+.arrow_profile.rotation {
+  transform: rotate(45deg);
+
+}
+
+.arrow_category {
+  border-top: #494949 1px solid;
+  border-left: #494949 1px solid;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  transform: rotate(-135deg);
+
+  top: 25%;
+  margin-left: 20%;
+}
+
+details[open] .arrow_category {
+  transform: rotate(45deg);
+}
+
+.post_btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.keyword_text {
+  display: flex;
+  width: 50%;
+
+}
+
+.keyword_text input[type="text"] {
+  flex: 1;
+}
+
+.keyword_text input[type="submit"] {
+  width: 100px;
+  flex: 1;
+}
+
+
 .modal_reserve_day {
   display: flex;
 }
@@ -335,4 +390,11 @@ li {
 
 .calendar_reserve_info:nth-child(2n+1) {
   background-color: aqua;
+}
+
+summary {
+  /* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
+  display: block;
+  /** もしくは、以下を指定する方法でもOK */
+  list-style-type: none;
 }
