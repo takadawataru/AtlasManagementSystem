@@ -13,7 +13,7 @@
             <div class="error_message">{{ $message }}</div>
             @enderror
           </div>
-          <div class="category_area" style="font-size:10px; text-aline:left;">
+          <div class="subcategory_area" style="font-size:10px; text-aline:left;">
             @foreach($post->subCategories as $subcategory)
             {{$subcategory->sub_category}}
             @endforeach

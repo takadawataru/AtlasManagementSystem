@@ -114,6 +114,14 @@ li {
   width: 60%;
 }
 
+.modal_content_c {
+  margin-left: 25%;
+}
+
+.ml-10 {
+  margin-left: 200px;
+}
+
 /* 掲示板 */
 .sub_categories {
   display: none;
@@ -137,6 +145,7 @@ li {
 .post_area {
   background: #FFF;
   border-radius: 10px;
+
 }
 
 .post_bottom_area {
@@ -218,13 +227,18 @@ li {
 }
 
 /* 掲示板　カテゴリー */
-.category_area {
+.subcategory_area {
   background-color: #03AAD2;
   border-radius: 10px;
   margin-right: 70%;
   width: auto;
   height: 20px;
   color: #FFF;
+}
+
+.category_area {
+  background-color: #FFF;
+  border-radius: 5px;
 }
 
 .category_box {
@@ -238,10 +252,23 @@ li {
 .category_btn {
   font-size: 12px;
   border-radius: 5px;
-  padding: 0 5px;
+  padding: 5px;
   border: none;
-  background: #999;
+  background: lightpink;
   color: #FFF;
+  width: 49%;
+  margin-top: 10px;
+}
+
+.category_btn_post {
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  background: orange;
+  color: #FFF;
+  width: 49%;
+  margin-top: 10px;
 }
 
 .main_categories span,
@@ -279,8 +306,17 @@ li {
 
 .search_conditions_inner {
   display: none;
-  background: #FFF;
 }
+
+.s_area {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+/* //s_area_label {
+display: flex;
+}*/
 
 .subject_edit_btn {
   font-size: 12px;
@@ -351,9 +387,11 @@ details[open] .arrow_category {
   margin-bottom: 10px;
 }
 
+
+
 .keyword_text {
   display: flex;
-  width: 50%;
+
 
 }
 
@@ -397,4 +435,26 @@ summary {
   display: block;
   /** もしくは、以下を指定する方法でもOK */
   list-style-type: none;
+  border-bottom: #494949 1px solid;
+}
+
+.s_icon {
+  /* サイドバーのアイコン*/
+  color: #FFF;
+}
+
+.category_submit {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  padding-left: 1rem;
+}
+
+.under_line {
+  border-bottom: #494949 1px solid;
+}
+
+.other_area p {
+  margin-top: 10px;
 }

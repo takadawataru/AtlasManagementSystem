@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="board_area w-100 border m-auto d-flex">
+<div class="board_area w-100  m-auto d-flex">
   <div class="post_view w-75 mt-5">
     <p class="w-75 m-auto">投稿一覧</p>
     @foreach($posts as $post)
@@ -9,6 +9,11 @@
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
       <div class="post_bottom_area d-flex">
+            <div class="subcategory_area" style="font-size:10px; text-aline:left;">
+            @foreach($post->subCategories as $subcategory)
+            {{$subcategory->sub_category}}
+            @endforeach
+          </div>
         <div class="d-flex post_status">
           <div class="mr-5">
             <i class="fa fa-comment"></i><span class="">{{$post->postComments->count()}}</span>
@@ -25,15 +30,17 @@
     </div>
     @endforeach
   </div>
-  <div class="other_area border w-25">
-    <div class="border m-4">
+  <div class="other_area  w-25">
+    <div class=" m-4">
       <div class="btn btn-info post_btn"  ><a href="{{ route('post.input')  }}" style="color:#fff">投稿</a></div>
       <div class="keyword_text">
         <input type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest" >
         <input type="submit" value="検索" form="postSearchRequest" class="btn btn-info" >
       </div>
       <input type="submit" name="like_posts" class="category_btn" value="いいねした投稿" form="postSearchRequest">
-      <input type="submit" name="my_posts" class="category_btn" value="自分の投稿" form="postSearchRequest">
+      <input type="submit" name="my_posts" class="category_btn_post" value="自分の投稿" form="postSearchRequest">
+
+      <p>カテゴリー検索</p>
 
         @foreach($categories as $category)
         <details name="accordion">
@@ -41,7 +48,7 @@
 
         <ul id="{{$category->id}}">
           @foreach($category->subCategories as $sub_category)
-          <li><button type="submit" name="category_word" value="{{$sub_category->sub_category}}"form="postSearchRequest">{{$sub_category->sub_category}}</button></li>
+          <li class="under_line"><input type="submit" name="category_word" form="postSearchRequest" value="{{$sub_category->sub_category}}" class="category_submit"></input></li>
           @endforeach
           </details>
         </ul>

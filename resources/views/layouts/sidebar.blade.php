@@ -22,15 +22,15 @@
   <div class="d-flex">
     <div class="sidebar">
       @section('sidebar')
-      <p><i class="fa-solid fa-house"></i><a href="{{ route('top.show') }}">トップ</a></p>
-      <p><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="/logout">ログアウト</a></p>
-      <p><i class="fa-regular fa-calendar"> </i><a href="{{ route('calendar.general.show',['user_id' => Auth::id()]) }}">スクール予約</a></p>
+      <p><i class="fa-solid fa-house s_icon"></i><a href="{{ route('top.show') }}">トップ</a></p>
+      <p><i class="fa-solid fa-arrow-right-from-bracket s_icon"></i><a href="/logout">ログアウト</a></p>
+      <p><i class="fa-regular fa-calendar s_icon"> </i><a href="{{ route('calendar.general.show',['user_id' => Auth::id()]) }}">スクール予約</a></p>
       @if(Auth::user()->role!=4)
-      <p><i class="fa-regular fa-calendar-check"></i><a href="{{ route('calendar.admin.show',['user_id' => Auth::id()]) }}">スクール予約確認</a></p>
-      <p><i class="fa-regular fa-pen-to-square"></i><a href="{{ route('calendar.admin.setting',['user_id' => Auth::id()]) }}">スクール枠登録</a></p>
+      <p><i class="fa-regular fa-calendar-check s_icon"></i><a href="{{ route('calendar.admin.show',['user_id' => Auth::id()]) }}">スクール予約確認</a></p>
+      <p><i class="fa-regular fa-pen-to-square s_icon"></i><a href="{{ route('calendar.admin.setting',['user_id' => Auth::id()]) }}">スクール枠登録</a></p>
       @endif
-      <p><i class="fa-regular fa-comment-dots"></i><a href="{{ route('post.show') }}">掲示板</a></p>
-      <p><i class="fa-solid fa-users"></i><a href="{{ route('user.show') }}">ユーザー検索</a></p>
+      <p><i class="fa-regular fa-comment-dots s_icon"></i><a href="{{ route('post.show') }}">掲示板</a></p>
+      <p><i class="fa-solid fa-users s_icon"></i><a href="{{ route('user.show') }}">ユーザー検索</a></p>
       @show
     </div>
     <div class="main-container">

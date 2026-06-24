@@ -21,6 +21,7 @@
     <form action="/delete/calendar" method="POST">
       @csrf
     <div class="modal__content">
+      <div class="modal_content_c">
       <div class="modal_reserve_day">
         <p>予約日：</p><p class= "modal-day"></p>
         <input type="hidden" name="day" class="hidden_day">
@@ -31,7 +32,8 @@
       </div>
       <p>上記の予約をキャンセルしてもよろしいでしょうか？</p>
       <button class="btn btn-primary js-modal-close">閉じる</button>
-      <button class="btn btn-danger">キャンセル</button>
+      <button class="btn btn-danger ml-10">キャンセル</button>
+      </div>
     </div>
   </form>
 </div>
