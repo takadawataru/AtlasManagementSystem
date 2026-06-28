@@ -49,7 +49,7 @@ class CalendarsController extends Controller
             $part=3;
         };
         $reserve_setting = ReserveSettings::where('setting_reserve',$day)->where('setting_part' ,$part)->first();
-        $reserve_setting->increment('limit_users');
+        $reserve_setting->increment('limit_users');//数をプラス1する//
         $reserve_setting->users()->detach(Auth::id());
         return redirect()->route('calendar.general.show',['user_id' => Auth::id()]);
     }

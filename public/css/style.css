@@ -229,7 +229,7 @@ li {
 /* 掲示板　カテゴリー */
 .subcategory_area {
   background-color: #03AAD2;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-right: 70%;
   width: auto;
   height: 20px;
@@ -281,13 +281,13 @@ li {
 .reserve_users_area {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
+  width: 940px;
   margin: 10px auto;
   height: 80vh;
   overflow: scroll;
   padding: 10px;
-  background: #FFF;
   border-radius: 5px;
+  gap: 5px;
 }
 
 .reserve_users_area span {
@@ -295,9 +295,12 @@ li {
 }
 
 .one_person {
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   border-radius: 10px;
+  background-color: #fff;
+  display: grid;
+  padding: inherit;
 }
 
 .search_conditions span {
@@ -312,7 +315,57 @@ li {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
+
+.name_color {
+  color: #9E9E9E;
+}
+
+/* 掲示板の検索ボタン */
+.search_btn_s {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 15px;
+}
+
+/* 掲示板のリセットボタン */
+.reset_btn {
+  margin-left: 38%;
+  color: #007BFF;
+  border: none;
+  margin-top: 20px;
+}
+
+/* 掲示板のキーワード検索 */
+.free_word {
+  border-radius: 5px;
+  border: none;
+  background-color: #d3d3d3;
+  width: 85%;
+  height: 45px;
+}
+
+.free_word::placeholder {
+  padding-left: 10px;
+}
+
+.search_area {
+  width: 20%;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.role_flex {
+  display: grid;
+  width: 35%;
+  margin-bottom: 10px;
+}
+
 
 /* //s_area_label {
 display: flex;
@@ -340,8 +393,8 @@ display: flex;
   display: inline-block;
   transform: rotate(-135deg);
   position: absolute;
-  top: 25%;
-  margin-left: 20%;
+  top: 38%;
+  margin-left: 15%;
 }
 
 .arrow.rotation {
@@ -411,6 +464,8 @@ details[open] .arrow_category {
 
 .calendar_reserve_detail {
   background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .calendar_reserve_title {
@@ -427,8 +482,14 @@ details[open] .arrow_category {
 }
 
 .calendar_reserve_info:nth-child(2n+1) {
-  background-color: aqua;
+  background-color: #B7FFFF;
 }
+
+.calendar_area {
+  width: 90%;
+}
+
+
 
 summary {
   /* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
@@ -457,4 +518,52 @@ summary {
 
 .other_area p {
   margin-top: 10px;
+}
+
+
+/* 新規登録画面 */
+.register_area {
+  width: 30%;
+}
+
+.register_sex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.old_year {
+  border-color: #007bff !important;
+  border-bottom: 1px solid #007bff !important;
+  width: 25%;
+
+}
+
+.old_month {
+  border-color: #007bff !important;
+  border-bottom: 1px solid #007bff !important;
+  width: 25%;
+}
+
+.old_day {
+  border-color: #007bff !important;
+  border-bottom: 1px solid #007bff !important;
+  width: 25%;
+}
+
+.search_category {
+  width: 40%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #d3d3d3;
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.engineer {
+  border-radius: 5px;
+  border: none;
+  background-color: #d3d3d3;
+
 }
